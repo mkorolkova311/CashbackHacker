@@ -25,6 +25,3 @@ public class CashbackHackServiceTest {
             Assert.assertEquals(785, boundary);
         }
     }
-
-
-
