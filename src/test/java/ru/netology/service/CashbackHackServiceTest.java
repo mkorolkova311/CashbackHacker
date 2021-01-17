@@ -1,11 +1,30 @@
 package ru.netology.service;
 
-public class CashbackHackServiceTest {
-        private final int boundary = 1000;
+import org.junit.Assert;
+import org.junit.Test;
 
-        public int remain(int amount) {
-            return boundary - amount % boundary;
+public class CashbackHackServiceTest {
+        @Test
+        public void shouldAmountLessBoundary() {
+            CashbackHackService service = new CashbackHackService();
+            int boundary = service.remain(900);
+            Assert.assertEquals(100,boundary);
+        }
+
+        @Test
+        public void shouldAmountEqualBoundary() {
+            CashbackHackService service = new CashbackHackService();
+            int boundary = service.remain(1000);
+            Assert.assertEquals(0,boundary);
+        }
+
+        @Test
+        public void shouldAmountMoreBoundary() {
+            CashbackHackService service = new CashbackHackService();
+            int boundary = service.remain(1215);
+            Assert.assertEquals(785, boundary);
         }
     }
+
 
 
